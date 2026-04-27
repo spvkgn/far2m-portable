@@ -14,7 +14,7 @@ esac
 if [[ "$ACTION" != "nomacros" ]]; then
   LM_CFG=luamacro.example.ini
   LM_CFG_PATH=$(find ./Plugins -type f -name $LM_CFG)
-  sed 's|^MainPath =.*|MainPath = $(FARHOME)/Macros|' "$LM_CFG_PATH" > "$(dirname "$LM_CFG_PATH")/${LM_CFG/.example}"
+  sed 's|^MainPath =.*|MainPath = ${FARHOME}/Macros|' "$LM_CFG_PATH" > "$(dirname "$LM_CFG_PATH")/${LM_CFG/.example}"
 fi
 
 exec "$HERE/far2m" "$@"
